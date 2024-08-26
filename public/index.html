@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Chess Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1> Chess Game</h1>
+        
+        <div id="player-selection">
+            <h2>Select Your Player</h2>
+            <button id="select-player-a" class="player-A">Player A</button>
+            <button id="select-player-b" class="player-B">Player B</button>
+        </div>
+
+        <div id="game-status"></div>
+        
+        <div id="game-board"></div>
+        
+        <div id="move-controls">
+            <div id="selected-piece"></div>
+            <div id="move-buttons"></div>
+        </div>
+        
+        <div id="piece-guide">
+            <h3>Piece Movement Guide</h3>
+            <ul>
+                <li><span class="piece-icon piece-A">P</span> Pawn (P): Moves 1 step in any direction</li>
+                <li><span class="piece-icon piece-A">H1</span> Hero1 (H1): Moves up to 2 steps in any direction (↑ ↓ ← →)</li>
+                <li><span class="piece-icon piece-A">H2</span> Hero2 (H2): Moves up to 2 steps diagonally (↖ ↗ ↙ ↘)</li>
+                <li><span class="piece-icon piece-A">H3</span> Hero3 (H3): Moves up to 3 steps in any direction</li>
+            </ul>
+        </div>
+        
+        <div id="move-history">
+            <h3>Move History</h3>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <div id="game-over-modal" class="modal">
+        <div class="modal-content">
+            <h2 id="game-over-message"></h2>
+            <button id="new-game-button">Start New Game</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
